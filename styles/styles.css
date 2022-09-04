@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  /*colors*/
+  --white: #FFFFFF;
+
+  --gray-300: #E1E1E6;
+  --gray-900: #323238;
+
+  --blue-500: #02799D;
+}
+
+/*fontsize 16px -> 15px*/
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+/*fontsize 16px -> 14px*/
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%
+  }
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+main {
+  max-width: 821px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12rem;
+}
+
+.display-timer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.display-timer .timer span {
+  font-size: 7.5rem;
+  color: var(--gray-900);
+}
+
+.display-timer .controls {
+  max-width: 19.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.display-timer .controls button {
+  width: 3rem;
+  border: none;
+  background-color: transparent;
+
+  visibility: visible;
+  opacity: 1;
+}
+
+.display-timer .controls button.hide {
+  display: none;
+}
+
+.display-timer .controls button svg path {
+  fill: var(--gray-900);
+}
+
+.themes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+
+.themes button {
+  width: 8.625rem;
+  height: 9.5rem;
+  border-radius: 1.5rem;
+  border: none;
+
+  background: var(--gray-300);
+}
+
+.themes button.selected {
+  background: var(--blue-500);
+}
+
+.themes button svg path {
+  fill: var(--gray-900);
+}
+
+.themes button.selected svg path {
+  fill: var(--white);
+}
+
+footer {
+  position: absolute;
+  bottom: 5rem;
+  
+  width: 100%;
+  text-align: center;
+
+  color: var(--gray-900);
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+}
