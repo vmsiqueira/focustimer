@@ -9,6 +9,12 @@ export default function Sounds() {
   const cafeteriaTheme = new Audio("../audios/cafeteria.wav");
   const fireTheme = new Audio("../audios/fire.wav");
 
+  //input
+  const forestVolume = document.querySelector(".forest-volume");
+  const rainVolume = document.querySelector(".rain-volume");
+  const cafeteriaVolume = document.querySelector(".cafeteria-volume");
+  const fireVolume = document.querySelector(".fire-volume");
+
   bgAudio.play();
   bgAudio.loop = true;
 
@@ -71,6 +77,22 @@ export default function Sounds() {
         bgAudio.play();
         bgAudio.loop = true
     }
+
+    forestVolume.addEventListener("input", () => {
+      forestTheme.volume = forestVolume.value;
+    })
+
+    rainVolume.addEventListener("input", () => {
+      rainTheme.volume = rainVolume.value;
+    })
+
+    cafeteriaVolume.addEventListener("input", () => {
+      cafeteriaTheme.volume = cafeteriaVolume.value;
+    })
+
+    fireVolume.addEventListener("input", () => {
+      fireTheme.volume = fireVolume.value;
+    })
   }
 
   return {

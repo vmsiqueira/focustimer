@@ -44,6 +44,11 @@ need to focus to.
 
 This project is under MIT License. Check the [LICENSE](https://github.com/vmsiqueira/focustimer/blob/main/LICENSE) file for more details.
 
+## ✨ New features added
+
+- Dark mode
+- Volume controls for background audios
+
 
 ## 🌐 Developer
 <img src="https://github.com/vmsiqueira.png" width="110" height="110" border-radius="50" /> <br>

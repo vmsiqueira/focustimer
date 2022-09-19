@@ -8,11 +8,15 @@
 :root {
   /*colors*/
   --white: #FFFFFF;
+  --black: #121214; 
 
   --gray-300: #E1E1E6;
+  --gray-500: #C4C4CC;
+  --gray-700: #29292E;
   --gray-900: #323238;
 
   --blue-500: #02799D;
+  --blue-700: #0A3442;
 }
 
 /*fontsize 16px -> 15px*/
@@ -35,6 +39,35 @@ body {
   height: 100vh;
 }
 
+body.dark {
+  background-color: var(--black);
+}
+
+.theme-buttons {
+  position: absolute;
+  right: 3.75rem;
+  top: 3.75rem;
+}
+
+.theme-buttons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-light.hide {
+  display: none;
+}
+
+.btn-dark.hide {
+  display: none;
+}
+
+.theme-buttons svg {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
 main {
   max-width: 821px;
   display: flex;
@@ -47,6 +80,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+body.dark #minutes,
+body.dark #seconds,
+body.dark .display-timer .timer span {
+  color: var(--white);
 }
 
 .display-timer .timer span {
@@ -78,6 +117,14 @@ main {
   fill: var(--gray-900);
 }
 
+body.dark .display-timer .controls button svg path {
+  fill: var(--gray-500);
+}
+
+.container {
+  position: relative;
+}
+
 .themes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -94,16 +141,77 @@ main {
   background: var(--gray-300);
 }
 
+body.dark .themes button {
+  background: var(--gray-700);
+}
+
+.themes button svg {
+  margin-top: -24px;
+}
+
 .themes button.selected {
   background: var(--blue-500);
+}
+
+body.dark .themes button.selected {
+  background: var(--blue-700);
 }
 
 .themes button svg path {
   fill: var(--gray-900);
 }
 
+body.dark .themes button svg path {
+  fill: var(--gray-500);
+}
+
 .themes button.selected svg path {
   fill: var(--white);
+}
+
+body.dark .themes button.selected svg path {
+  fill: var(--white);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 90px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--gray-900);
+  margin-top: 38px;
+  position: absolute;
+  bottom: 30px;
+  left: 24px;
+}
+
+body.dark input[type="range"] {
+  background-color: var(--white);
+}
+
+.container button.selected + input[type="range"] {
+  background-color: var(--white);
+}
+
+input[type="range"].selected {
+  background-color: var(--white);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background-color: var(--gray-900);
+  cursor: pointer;
+}
+
+body.dark input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--white);
+}
+
+.container button.selected + input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--white);
 }
 
 footer {
@@ -116,10 +224,25 @@ footer {
   color: var(--gray-900);
 }
 
+body.dark footer {
+  color: var(--gray-500);
+}
+
 @media (max-width: 900px) {
   main {
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
+  }
+
+  .theme-buttons {
+    position: static;
+    margin: 1rem 0 1rem auto;
+  }
+
+  footer {
+    position: static;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 }

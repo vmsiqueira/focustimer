@@ -4,10 +4,13 @@ import {
   stopButton,
   advanceButton,
   rewindButton,
+  lightButton,
+  darkButton,
   forestSoundButton,
   rainSoundButton,
   cafeteriaSoundButton,
-  fireSoundButton 
+  fireSoundButton, 
+  body,
 } from "./elements.js"
 
 export default function Events({ controls, timer, sound }) {
@@ -41,6 +44,18 @@ export default function Events({ controls, timer, sound }) {
     timer.updateDisplay(newMinutes, 0);
     timer.updateMinutes(newMinutes);
     sound.pressButton();
+  })
+
+  lightButton.addEventListener("click", () => {
+    lightButton.classList.add("hide");
+    darkButton.classList.remove("hide");
+    body.classList.add("dark");
+  })
+
+  darkButton.addEventListener("click", () => {
+    lightButton.classList.remove("hide");
+    darkButton.classList.add("hide");
+    body.classList.remove("dark");
   })
 
   forestSoundButton.addEventListener("click", () => {

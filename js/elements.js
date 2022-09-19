@@ -15,16 +15,26 @@ const rainSoundButton = document.querySelector('.btn-cloud');
 const cafeteriaSoundButton = document.querySelector('.btn-house');
 const fireSoundButton = document.querySelector('.btn-fire');
 
+//color-theme-buttons
+const lightButton = document.querySelector(".btn-light");
+const darkButton= document.querySelector(".btn-dark");
+
+//body
+const body = document.querySelector("body");
+
 export {
   playButton,
   pauseButton,
   stopButton,
   advanceButton,
   rewindButton,
+  lightButton,
+  darkButton,
   minutesDisplay,
   secondsDisplay,
   forestSoundButton,
   rainSoundButton,
   cafeteriaSoundButton,
-  fireSoundButton
+  fireSoundButton,
+  body
 }
